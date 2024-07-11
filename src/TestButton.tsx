@@ -1,19 +1,15 @@
 import React, { FC, PropsWithChildren, useEffect } from 'react';
 import './TestButton.styles.scss';
+import { TestButtonProps } from 'trip-recommender';
 
-interface TestButtonProps {
-  label: string,
-  onClick: () => void
-}
-
-const TestButton = (props: TestButtonProps) => {
+const TestButton = ({label, onClick}: TestButtonProps) => {
   useEffect(() => {
     console.log('Button component mounted');
   }, []);
 
   return (
-    <button className="my-button" onClick={props.onClick}>
-      {props.label}
+    <button className="my-button" onClick={onClick}>
+      {label}
     </button>
   );
 };

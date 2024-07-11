@@ -1,3 +1,7 @@
 declare module 'trip-recommender' {
-  export const TestButton: React.FC;
+  export interface TestButtonProps {
+    label: string,
+    onClick: () => void
+  }
+  export const TestButton: React.FC<TestButtonProps>;
 }
