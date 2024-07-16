@@ -1,1 +1,4 @@
-# trip-recommender
+# Trip-Recommender
+
+
+특정 주소나 위치를 검색했을 때 ai에게 여행 추천을 받아서 사용자에게 보여주는 라이브러리

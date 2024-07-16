@@ -13,17 +13,12 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: pkg.main,
-        format: 'cjs',
-        sourcemap: true,
-      },
-      {
         file: pkg.module,
         format: 'esm',
         sourcemap: true,
       },
     ],
-    external: ['react', 'react-dom', 'gsap', 'locomotive-scroll'],
+    external: ['react', 'react-dom'],
     plugins: [
       nodeResolve({
         extensions: ['.js', '.jsx', '.ts', '.tsx']
