@@ -2,7 +2,6 @@
   "name": "trip-recommender",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "files": [
@@ -16,12 +15,11 @@
   "author": "sanhol",
   "license": "ISC",
   "peerDependencies": {
-    "typescript": "^5.5.3",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
     "openai": "^4.52.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "styled-components": "^6.1.11",
     "kakao.maps.d.ts": "^0.1.40"
   },

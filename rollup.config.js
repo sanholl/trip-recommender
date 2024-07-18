@@ -5,7 +5,6 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import dts from 'rollup-plugin-dts';
 import pkg from './package.json' assert { type: 'json' };
 
 export default [
@@ -20,6 +19,7 @@ export default [
     ],
     external: ['react', 'react-dom'],
     plugins: [
+      peerDepsExternal(),
       nodeResolve({
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }),
@@ -37,8 +37,7 @@ export default [
         use: ['sass'],
         extensions: ['.css', '.scss'],
       }),
-      terser(),
-      peerDepsExternal(),
+      terser()
     ],
   }
 ];
