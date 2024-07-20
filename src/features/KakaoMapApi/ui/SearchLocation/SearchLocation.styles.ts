@@ -2,11 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: absolute;
-  z-index: 1;
-  height: 100%;
+  height: 100vh;
   background: white;
   opacity: 0.8;
   overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 30vw;
+  border: 1px solid #c0c0c0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Form = styled.form`
@@ -26,7 +33,6 @@ export const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: gray;
 `
 
 export const Item = styled.li`

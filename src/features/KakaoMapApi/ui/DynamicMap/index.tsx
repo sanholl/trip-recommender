@@ -1,10 +1,9 @@
 import React, { Children, FC, PropsWithChildren, ReactNode, useEffect, useRef, useState } from "react";
 import { Container, Map } from "./DynamicMap.styles";
 import { KakaoMapContext } from "../../../../entities/KakaoMap/lib/context/useMap";
+import { DynamicMapProps } from "trip-recommender";
 
-interface DynamicMapProps {
-  children: ReactNode
-}
+
 
 const DynamicMap: FC<PropsWithChildren<DynamicMapProps>> = ({children}) => {
   const [map, setMap] = useState<kakao.maps.Map>();
