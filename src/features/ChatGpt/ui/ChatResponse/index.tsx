@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { chatResponse } from "../../api/ChatGptApi";
 import { Container, Title, List, Message, UserMessage, LoadingMessage } from "./ChatResponse.styles";
 import { ChatResponseProps } from "trip-recommender";
+import { parseResponseToHtml } from "../../model/parseResponseToHtml";
 
 const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -19,8 +20,9 @@ const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
     setMessages(prev => [...prev, { type: 'loading', content: '...loading' }]);
     try {
       const response = await chatResponse(message, openAiKey);
+      const parsedResponse = parseResponseToHtml(response);
       setMessages(prev => prev.filter(msg => msg.type !== 'loading')); // Remove loading message
-      setMessages(prev => [...prev, { type: 'bot', content: response }]);
+      setMessages(prev => [...prev, { type: 'bot', content: parsedResponse }]);
     } catch (error) {
       console.error("send message error", error);
       setMessages(prev => prev.filter(msg => msg.type !== 'loading')); // Remove loading message
@@ -38,7 +40,7 @@ const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
           msg.type === 'user' ? (
             <UserMessage key={index}>{msg.content}</UserMessage>
           ) : msg.type === 'bot' ? (
-            <Message key={index}>{msg.content}</Message>
+            <Message key={index} dangerouslySetInnerHTML={{ __html: msg.content }} />
           ) : (
             <LoadingMessage key={index}>{msg.content}</LoadingMessage>
           )

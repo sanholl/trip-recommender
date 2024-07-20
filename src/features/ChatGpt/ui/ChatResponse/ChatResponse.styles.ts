@@ -28,6 +28,17 @@ export const Message = styled.div`
   align-self: flex-start;
   max-width: 80%;
   word-break: break-word;
+
+  h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+
+  li {
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style-type: disc;
+  }
 `;
 
 export const UserMessage = styled(Message)`
