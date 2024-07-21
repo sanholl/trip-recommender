@@ -2,7 +2,6 @@
   "name": "trip-recommender",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "files": [
@@ -16,10 +15,13 @@
   "author": "sanhol",
   "license": "ISC",
   "peerDependencies": {
-    "gsap": "^3.12.5",
-    "locomotive-scroll": "^4.1.4",
+    "openai": "^4.52.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "styled-components": "^6.1.11",
+    "kakao.maps.d.ts": "^0.1.40"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -30,14 +32,12 @@
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/react": "^18.3.3",
     "node-sass": "^9.0.0",
     "rollup": "^4.18.1",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "^5.5.3"
+    "rollup-plugin-typescript2": "^0.36.0"
   },
   "type": "module"
 }

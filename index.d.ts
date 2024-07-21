@@ -1,7 +1,7 @@
 declare module 'trip-recommender' {
-  export interface TestButtonProps {
-    label: string,
-    onClick: () => void
+  export interface ChatResponseProps {
+    keyword: string;
+    openAiKey: string;
   }
-  export const TestButton: React.FC<TestButtonProps>;
+  export const ChatResponse: React.FC<ChatResponseProps>;
 }

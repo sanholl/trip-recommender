@@ -1,0 +1,1 @@
+export { default as ChatResponse } from '../features/ChatGpt/ui/ChatResponse/index';
