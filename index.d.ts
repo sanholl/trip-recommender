@@ -4,4 +4,6 @@ declare module 'trip-recommender' {
     openAiKey: string;
   }
   export const ChatResponse: React.FC<ChatResponseProps>;
+  
+  export const SelectList: React.FC;
 }

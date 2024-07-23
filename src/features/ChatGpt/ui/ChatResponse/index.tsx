@@ -4,7 +4,7 @@ import { Container, Title, List, Message, UserMessage, LoadingMessage } from "./
 import { ChatResponseProps } from "trip-recommender";
 import { parseResponseToHtml } from "../../model/parseResponseToHtml";
 
-const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
+export const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const [messages, setMessages] = useState<{ type: 'user' | 'bot' | 'loading'; content: string }[]>([]);
 
@@ -36,18 +36,19 @@ const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
     <Container>
       <List>
         <Title>Trip Recommendation</Title>
-        {messages.map((msg, index) => (
-          msg.type === 'user' ? (
-            <UserMessage key={index}>{msg.content}</UserMessage>
-          ) : msg.type === 'bot' ? (
-            <Message key={index} dangerouslySetInnerHTML={{ __html: msg.content }} />
-          ) : (
-            <LoadingMessage key={index}>{msg.content}</LoadingMessage>
-          )
+        {
+          isLoading  
+          ? <span>Loading...</span>
+          : messages.map((msg, index) => (
+            msg.type === 'user' ? (
+              <UserMessage key={index}>{msg.content}</UserMessage>
+            ) : msg.type === 'bot' ? (
+              <Message key={index} dangerouslySetInnerHTML={{ __html: msg.content }} />
+            ) : (
+              <LoadingMessage key={index}>{msg.content}</LoadingMessage>
+            )
         ))}
       </List>
     </Container>
   );
 };
-
-export default ChatResponse;

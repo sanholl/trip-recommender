@@ -1,1 +1,1 @@
-export { default as ChatResponse } from '../features/ChatGpt/ui/ChatResponse/index';
+export { ChatResponse, SelectList } from '../features/ChatGpt/ui';
