@@ -39,86 +39,64 @@ export const generateTravelPrompt: string = `
 JSON 응답 예시:
 
 {
-  "destination": "서울, 대한민국",
-  "recommendation": [
-    {
-    "tripType": "연인과 함께",
-    "tripStyle": "활동적인 데이트",
-    "activities": [
-        {
-          "title": "여행의 시작",
-          "activities": [
-            {
-              "placeType": "관광명소",
-              "name": "뚝섬 한강공원",
-              "description": "한강을 따라 산책하거나 자전거를 탈 수 있는 장소로, 연인들이 함께 즐기기 좋습니다.",
-              "location": "서울 성동구",
-              "link": "https://www.seoul.go.kr/life/hanriver/NR_index.html"
-            },
-            {
-              "placeType": "카페",
-              "name": "어니언 성수",
-              "description": "창고를 개조한 독특한 분위기의 카페로, 빵과 커피가 유명합니다.",
-              "recommendedMenu": "크로와상, 아메리카노",
-              "location": "서울 성수동2가 277-135",
-              "link": "https://www.instagram.com/cafe_onion/"
-            }
-          ]
-        },
-        {
-          "title": "식사 장소 추천",
-          "activities": [
-            {
-              "placeType": "맛집",
-              "name": "뚝섬 수제비",
-              "description": "시원한 국물과 쫄깃한 수제비를 맛볼 수 있는 맛집입니다.",
-              "recommendedMenu": "바지락 수제비",
-              "location": "서울 성수동1가 656-789",
-              "link": "https://map.naver.com/v5/search/%EB%9A%9D%EC%84%AC%20%EC%88%98%EC%A0%9C%EB%B9%84"
-            },
-            {
-              "placeType": "관광명소",
-              "name": "성수동 카페 거리",
-              "description": "다양한 개성 있는 카페들이 모여 있는 거리로, 친구들과 여유롭게 시간을 보낼 수 있습니다.",
-              "location": "서울 성수동2가",
-              "link": "https://www.visitseoul.net"
-            }
-          ]
-        },
-        {
-          "title": "저녁 활동",
-          "activities": [
-            {
-              "placeType": "맛집",
-              "name": "플레이버 타운",
-              "description": "다양한 음식을 맛볼 수 있는 푸드 코트로, 친구들과 다양한 음식을 즐길 수 있습니다.",
-              "recommendedMenu": "비빔밥, 치킨 윙",
-              "location": "서울 성수동2가 322-15",
-              "link": "https://www.flavortown.com/"
-            },
-            {
-              "placeType": "체험 활동",
-              "name": "한강 자전거 타기",
-              "description": "한강을 따라 자전거를 타며 서울의 아름다운 경치를 즐길 수 있습니다.",
-              "location": "서울 성수동1가",
-              "link": "https://www.hangangbike.com/"
-            }
-          ]
-        },
-        {
-          "title": "팝업스토어 방문",
-          "activities": [
-            {
-              "placeType": "팝업스토어",
-              "name": "성수 팝업스토어",
-              "description": "성수동의 다양한 팝업스토어를 방문하여 최신 트렌드를 체험할 수 있습니다.",
-              "location": "서울 성수동1가 333-2",
-              "link": "https://www.seongsu.com/"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "destination": "뚝섬유수지 공영주차장, 서울, 대한민국",
+  "recommendation": {
+    "tripType": "가족과 함께",
+    "tripStyle": "여유로운 나들이",
+    "tripActivities": [
+      {
+        "placeType": "관광명소",
+        "name": "뚝섬 한강공원",
+        "description": "한강의 경치와 함께 산책하거나 자전거를 탈 수 있는 곳입니다. 가족들이 함께 즐기기 좋습니다.",
+        "location": "서울 성동구",
+        "link": "https://www.seoul.go.kr/life/hanriver/NR_index.html"
+      },
+      {
+        "placeType": "카페",
+        "name": "루프탑 카페 루프",
+        "description": "한강 뷰가 훌륭한 루프탑 카페로, 가족과 함께 즐거운 시간을 보낼 수 있습니다.",
+        "recommendedMenu": "아메리카노, 일본식 카레",
+        "location": "서울 성동구 뚝섬로 33길 1",
+        "link": "https://www.instagram.com/rooftop_cafe_loop/"
+      },
+      {
+        "placeType": "체험 활동",
+        "name": "한강 수상 택시",
+        "description": "한강에서 수상 택시를 타고 특별한 경치를 감상하며 여유로운 시간을 보낼 수 있습니다.",
+        "location": "서울 성동구 누하동",
+        "link": "https://www.hangangtaxi.com/"
+      },
+      {
+        "placeType": "관광명소",
+        "name": "서울숲",
+        "description": "서울숲에서 자연을 거닐며 여유롭게 산책할 수 있는 공간입니다.",
+        "location": "서울 성동구 뚝섬로 273",
+        "link": "http://seoulforest.or.kr/"
+      },
+      {
+        "placeType": "맛집",
+        "name": "한강 BBQ",
+        "description": "한강 전망을 감상하며 바비큐를 즐길 수 있는 레스토랑입니다.",
+        "recommendedMenu": "갈비살, 매운 오징어",
+        "location": "서울 성동구 성수동 2가 120-1",
+        "link": "https://www.instagram.com/hangangbbq/"
+      },
+      {
+        "placeType": "디저트",
+        "name": "진저브레드 카페",
+        "description": "맛있는 디저트와 커피를 즐길 수 있는 곳으로, 가족들과의 즐거운 시간을 마무리하기 좋습니다.",
+        "recommendedMenu": "진저브레드 케이크, 라떼",
+        "location": "서울 성동구 뚝섬로 25",
+        "link": "https://www.instagram.com/gingerbread_cafe/"
+      },
+      {
+        "placeType": "관광명소",
+        "name": "한강 자전거 도로",
+        "description": "한강의 야경을 자전거를 타며 감상할 수 있는 곳입니다.",
+        "location": "서울 성동구 성수동",
+        "link": "https://www.hangangbike.com/"
+      }
+    ]
+  }
 }
 `
