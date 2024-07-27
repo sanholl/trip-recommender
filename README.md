@@ -10,7 +10,7 @@
 ### 설치
 
 ```bash
-$ npm install trip-recommender-library
+$ npm install trip-recommender
 ```
 
 ### Github
