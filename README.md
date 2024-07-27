@@ -76,7 +76,7 @@ export interface ErrorProps {
 
 
 
-### ChatResponse
+## ChatResponse
 
 선택된 장소, 위치와 관련되어 ai의 여행 추천을 보여주는 컴포넌트
 
@@ -98,7 +98,7 @@ export interface ErrorProps {
 
 
 
-### SelectList
+## SelectList
 
 사용자의 요구 조건을 최대한 근접한 답변을 내놓기 위한 추가 선택을 위한 옵션들을 보여주는 컴포넌트
 
@@ -121,7 +121,7 @@ export interface ErrorProps {
 
 
 
-### RecommendationList
+## RecommendationList
 
 open ai의 응답 결과 값을 이용하여 `추천 일정` 을 보여주는 컴포넌트
 
@@ -144,7 +144,7 @@ open ai의 응답 결과 값을 이용하여 `추천 일정` 을 보여주는 �
 
 
 
-### ChatLoading
+## ChatLoading
 
 ai 답변이 오기전 로딩 화면
 
@@ -161,7 +161,7 @@ ai 답변이 오기전 로딩 화면
 
 
 
-### Error
+## Error
 
 error에 대한 화면을 보여주는 컴포넌트
 
@@ -177,4 +177,4 @@ error에 대한 화면을 보여주는 컴포넌트
 
 #### 예시
 
-<img src="/img/error.png" width="100%" />
+![error](https://github.com/user-attachments/assets/547f4464-a71b-4c0e-9770-016b64b63546)
