@@ -1,6 +1,6 @@
 {
   "name": "trip-recommender",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
