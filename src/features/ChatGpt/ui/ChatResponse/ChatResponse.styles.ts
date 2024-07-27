@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 20px;
-  background: #f5f5f5;
-  border-radius: 8px;
   margin: 0 auto;
+  width: 80%;
 `;
 
 export const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 1em;
+  text-align: center;
   margin-bottom: 10px;
 `;
 

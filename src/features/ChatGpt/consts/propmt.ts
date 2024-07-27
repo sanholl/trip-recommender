@@ -17,6 +17,7 @@ export const generateTravelPrompt: string = `
 응답 지침:
 응답을 JSON 형식으로 구성하세요.
 각 여행지 추천에 대한 링크를 포함하세요.
+각 여행지에 대한 이미지를 나타내는 imgLink 필드를 포함하세요.
 사용자의 요청을 포함해서 일정을 구성해주세요.
 가능한 한 구체적인 예시를 들어 설명하세요.
 맛집 코스, 활동적인 코스, 정적인 코스, 데이트 코스, 연인과 즐길 수 있는 여행, 친구들과 즐길 수 있는 여행, 가족과 즐길 수 있는 여행과 같이 카테고리를 나누어 여행 코스를 추천해주세요.
@@ -37,9 +38,10 @@ export const generateTravelPrompt: string = `
 이 지침을 따라 응답하면서, 항상 최신 여행 트렌드와 추천 장소를 반영하고, 질문자들이 여행을 이해하고 효과적으로 계획할 수 있도록 도와주세요.
 
 JSON 응답 예시:
+항상 아래와 같은 고정된 JSON 형식으로 응답하세요. JSON 외의 다른 텍스트는 포함하지 마세요.
 
 {
-  "destination": "뚝섬유수지 공영주차장, 서울, 대한민국",
+  "destination": "뚝섬유수지 공영주차장, 연인과 함께, 활동적인 스타일",
   "recommendation": {
     "tripType": "가족과 함께",
     "tripStyle": "여유로운 나들이",
@@ -49,6 +51,7 @@ JSON 응답 예시:
         "name": "뚝섬 한강공원",
         "description": "한강의 경치와 함께 산책하거나 자전거를 탈 수 있는 곳입니다. 가족들이 함께 즐기기 좋습니다.",
         "location": "서울 성동구",
+        "imgLink": "https://example.com/image1.jpg",
         "link": "https://www.seoul.go.kr/life/hanriver/NR_index.html"
       },
       {
@@ -57,6 +60,7 @@ JSON 응답 예시:
         "description": "한강 뷰가 훌륭한 루프탑 카페로, 가족과 함께 즐거운 시간을 보낼 수 있습니다.",
         "recommendedMenu": "아메리카노, 일본식 카레",
         "location": "서울 성동구 뚝섬로 33길 1",
+        "imgLink": "https://example.com/image2.jpg",
         "link": "https://www.instagram.com/rooftop_cafe_loop/"
       },
       {
@@ -64,6 +68,7 @@ JSON 응답 예시:
         "name": "한강 수상 택시",
         "description": "한강에서 수상 택시를 타고 특별한 경치를 감상하며 여유로운 시간을 보낼 수 있습니다.",
         "location": "서울 성동구 누하동",
+        "imgLink": "https://example.com/image3.jpg",
         "link": "https://www.hangangtaxi.com/"
       },
       {
@@ -71,6 +76,7 @@ JSON 응답 예시:
         "name": "서울숲",
         "description": "서울숲에서 자연을 거닐며 여유롭게 산책할 수 있는 공간입니다.",
         "location": "서울 성동구 뚝섬로 273",
+        "imgLink": "https://example.com/image4.jpg",
         "link": "http://seoulforest.or.kr/"
       },
       {
@@ -79,6 +85,7 @@ JSON 응답 예시:
         "description": "한강 전망을 감상하며 바비큐를 즐길 수 있는 레스토랑입니다.",
         "recommendedMenu": "갈비살, 매운 오징어",
         "location": "서울 성동구 성수동 2가 120-1",
+        "imgLink": "https://example.com/image5.jpg",
         "link": "https://www.instagram.com/hangangbbq/"
       },
       {
@@ -87,6 +94,7 @@ JSON 응답 예시:
         "description": "맛있는 디저트와 커피를 즐길 수 있는 곳으로, 가족들과의 즐거운 시간을 마무리하기 좋습니다.",
         "recommendedMenu": "진저브레드 케이크, 라떼",
         "location": "서울 성동구 뚝섬로 25",
+        "imgLink": "https://example.com/image6.jpg",
         "link": "https://www.instagram.com/gingerbread_cafe/"
       },
       {
@@ -94,6 +102,7 @@ JSON 응답 예시:
         "name": "한강 자전거 도로",
         "description": "한강의 야경을 자전거를 타며 감상할 수 있는 곳입니다.",
         "location": "서울 성동구 성수동",
+        "imgLink": "https://example.com/image7.jpg",
         "link": "https://www.hangangbike.com/"
       }
     ]

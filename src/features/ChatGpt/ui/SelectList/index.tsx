@@ -11,8 +11,10 @@ import {
   AnimatedSelectLocation,
   Button,
 } from "./SelectList.styles";
+import { SelectListProps } from "trip-recommender";
 
-export const SelectList = () => {
+
+export const SelectList = ({ onSelection }: SelectListProps) => {
   const [selectedWho, setSelectedWho] = useState<string[]>([]);
   const [selectedInterest, setSelectedInterest] = useState<string[]>([]);
 
@@ -31,7 +33,7 @@ export const SelectList = () => {
   };
 
   const handleCreatePlan = () => {
-    console.log("일정 생성하기 버튼 클릭됨");
+    onSelection(selectedWho, selectedInterest);
   };
 
   return (
@@ -79,13 +81,12 @@ export const SelectList = () => {
               </Option>
             ))}
           </OptionsContainer>
-
         </AnimatedSelectLocation>
       )}
-      { selectedInterest.length > 0 && (
+      {selectedInterest.length > 0 && (
         <SelectLocation>
           <AnimatedSelectLocation>
-            <Button onClick={handleCreatePlan}>일정 생성하기</Button> 
+            <Button onClick={handleCreatePlan}>일정 생성하기</Button>
           </AnimatedSelectLocation>
         </SelectLocation>
       )}
