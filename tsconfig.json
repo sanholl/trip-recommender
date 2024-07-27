@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "react",
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types", "index.d.ts"]
   },
   "include": ["src/**/*", "@types", "index.ts", "index.d.ts"],
   "exclude": ["node_modules", "build", "dist", "lib", "example", "rollup.config.js"]
