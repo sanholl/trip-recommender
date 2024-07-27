@@ -15,6 +15,12 @@ export const Emoji = styled.div`
   font-size: 40px;
 `;
 
+export const Header = styled.h1`
+  font-size: 1em;
+  text-align: center;
+  margin-bottom: 10px;
+`;
+
 export const Title = styled.h1`
   font-size: 24px;
   margin-bottom: 10px;

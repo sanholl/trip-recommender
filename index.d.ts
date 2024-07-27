@@ -1,9 +1,6 @@
 declare module '*.png';
 declare module '*.gif';
 declare module 'trip-recommender' {
-import { ChatLoading } from './src/features/ChatGpt/ui/ChatLoading/index';
-import { RecommendationList } from './src/features/ChatGpt/ui/RecommendationList/index';
-import { Error } from './src/shared/ui/Error/index';
   export interface ChatResponseProps {
     keyword: string;
     openAiKey: string;

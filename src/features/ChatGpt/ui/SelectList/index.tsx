@@ -10,6 +10,7 @@ import {
   Title,
   AnimatedSelectLocation,
   Button,
+  Header,
 } from "./SelectList.styles";
 import { SelectListProps } from "trip-recommender";
 
@@ -38,6 +39,7 @@ export const SelectList = ({ onSelection }: SelectListProps) => {
 
   return (
     <Container>
+      <Header>TRIP RECOMMENDER</Header>
       <SelectLocation>
         <Emoji
           role="img"
