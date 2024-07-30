@@ -1,1 +1,3 @@
-export { default as ChatResponse } from '../features/ChatGpt/ui/ChatResponse/index';
+export { ChatResponse, SelectList, RecommendationList } from '../features/ChatGpt/ui';
+export { Error } from '../shared/ui/Error';
+export { ChatLoading } from '../shared/ui/ChatLoading';

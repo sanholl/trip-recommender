@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { chatResponse } from "../../api/ChatGptApi";
-import { Container, Title, List, Message, UserMessage, LoadingMessage } from "./ChatResponse.styles";
-import { ChatResponseProps } from "trip-recommender";
-import { parseResponseToHtml } from "../../model/parseResponseToHtml";
+import { Container, Title, List } from "./ChatResponse.styles";
+import { ChatResponseProps, ChatResponseType } from "trip-recommender";
+import { ChatLoading } from "../../../../shared/ui/ChatLoading";
+import { RecommendationList } from "../RecommendationList";
+import { Error } from "../../../../shared/ui/Error";
 
-const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
-  const [isLoading, setLoading] = useState<boolean>(false);
-  const [messages, setMessages] = useState<{ type: 'user' | 'bot' | 'loading'; content: string }[]>([]);
+export const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
+  const [isLoading, setLoading] = useState<boolean>(true);
+  const [response, setResponse] = useState<ChatResponseType>();
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (keyword && !isLoading) {
-      setMessages(prev => [...prev, { type: 'user', content: keyword }]);
+    if (keyword) {
       fetchResponse(keyword);
     }
   }, [keyword]);
 
-  const fetchResponse = async (message: string) => {
+  const fetchResponse = async (keyword: string) => {
     setLoading(true);
-    setMessages(prev => [...prev, { type: 'loading', content: '...loading' }]);
+    setError(null);
     try {
-      const response = await chatResponse(message, openAiKey);
-      const parsedResponse = parseResponseToHtml(response);
-      setMessages(prev => prev.filter(msg => msg.type !== 'loading')); // Remove loading message
-      setMessages(prev => [...prev, { type: 'bot', content: parsedResponse }]);
+      const response = await chatResponse(keyword, openAiKey);
+      setResponse(JSON.parse(response));
     } catch (error) {
       console.error("send message error", error);
-      setMessages(prev => prev.filter(msg => msg.type !== 'loading')); // Remove loading message
-      setMessages(prev => [...prev, { type: 'bot', content: "추천을 가져오는 중 문제가 발생했습니다." }]);
+      setError("추천을 가져오는 중 문제가 발생했습니다.");
     } finally {
       setLoading(false);
     }
@@ -35,19 +34,15 @@ const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
   return (
     <Container>
       <List>
-        <Title>Trip Recommendation</Title>
-        {messages.map((msg, index) => (
-          msg.type === 'user' ? (
-            <UserMessage key={index}>{msg.content}</UserMessage>
-          ) : msg.type === 'bot' ? (
-            <Message key={index} dangerouslySetInnerHTML={{ __html: msg.content }} />
-          ) : (
-            <LoadingMessage key={index}>{msg.content}</LoadingMessage>
-          )
-        ))}
+        <Title>TRIP RECOMMENDER</Title>
+        {isLoading ? (
+          <ChatLoading />
+        ) : error ? (
+          <Error message={error}/>
+        ) : (
+          response && <RecommendationList response={response} />
+        )}
       </List>
     </Container>
   );
 };
-
-export default ChatResponse;
