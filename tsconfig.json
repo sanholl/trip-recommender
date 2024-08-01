@@ -4,17 +4,53 @@
     "declarationDir": "./dist/types",
     "outDir": "./dist",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "module": "es6",
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "jsx": "react",
-    "typeRoots": ["./node_modules/@types", "index.d.ts"]
+    "jsx": "preserve",
+    "typeRoots": [
+      "./node_modules/@types",
+      "index.d.ts"
+    ],
+    "incremental": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "noEmit": true,
+    "isolatedModules": true
   },
-  "include": ["src/**/*", "@types", "index.ts", "index.d.ts"],
-  "exclude": ["node_modules", "build", "dist", "lib", "example", "rollup.config.js"]
+  "include": [
+    "src/**/*",
+    "@types",
+    "index.ts",
+    "index.d.ts",
+    "./dist/types/**/*.ts",
+    "./next-env.d.ts",
+    "pages/api/createClient.ts",
+    "pages",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

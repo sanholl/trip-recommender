@@ -6,14 +6,14 @@ import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 import image from '@rollup/plugin-image';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import pkg from './package.json' assert { type: 'json' };
+import json from '@rollup/plugin-json';
 
 export default [
   {
     input: 'src/app/index.ts',
     output: [
       {
-        file: pkg.module,
+        file: 'dist/esm/index.js',
         format: 'esm',
         sourcemap: true,
       },
@@ -25,6 +25,7 @@ export default [
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }),
       commonjs(),
+      json(), // JSON 플러그인 추가
       typescript({ useTsconfigDeclarationDir: true }),
       babel({
         babelHelpers: 'bundled',

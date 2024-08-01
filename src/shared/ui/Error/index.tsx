@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Emoji, Text } from "./Error.styles";
-import { ErrorProps } from "trip-recommender";
+import { ErrorProps } from "@types";
 
 export const Error = ({ message }: ErrorProps) => {
   return (

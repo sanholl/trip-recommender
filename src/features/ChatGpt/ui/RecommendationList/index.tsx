@@ -13,12 +13,8 @@ import {
   RecommendedMenu,
   Request
 } from "./RecommendationList.styles";
-import { ChatResponseType } from "trip-recommender";
+import { RecommendationListProps } from "@types";
 
-
-interface RecommendationListProps {
-  response: ChatResponseType;
-}
 
 export const RecommendationList = ({ response }: RecommendationListProps) => {
   const recommendation = response.recommendation;

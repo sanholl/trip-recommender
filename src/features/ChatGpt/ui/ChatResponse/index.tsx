@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { chatResponse } from "../../api/ChatGptApi";
 import { Container, Title, List } from "./ChatResponse.styles";
-import { ChatResponseProps, ChatResponseType } from "trip-recommender";
 import { ChatLoading } from "../../../../shared/ui/ChatLoading";
 import { RecommendationList } from "../RecommendationList";
 import { Error } from "../../../../shared/ui/Error";
+import { ChatResponseProps, ChatResponseType } from "@types";
 
 export const ChatResponse = ({ keyword, openAiKey }: ChatResponseProps) => {
   const [isLoading, setLoading] = useState<boolean>(true);

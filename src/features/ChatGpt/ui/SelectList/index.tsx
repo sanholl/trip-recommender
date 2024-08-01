@@ -12,7 +12,7 @@ import {
   Button,
   Header,
 } from "./SelectList.styles";
-import { SelectListProps } from "trip-recommender";
+import { SelectListProps } from "@types";
 
 
 export const SelectList = ({ onSelection }: SelectListProps) => {
